@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bite the bullet — a 7-minute KDLI panel lesson</title>
+<style>
+  @font-face { font-family: "Inter"; src: url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; }
+  @font-face { font-family: "Inter"; src: url("file:///usr/share/fonts/truetype/macos/Inter-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; }
+  @font-face { font-family: "Inter"; src: url("file:///usr/share/fonts/truetype/macos/Inter-SemiBold.ttf") format("truetype"); font-weight: 600; font-style: normal; }
+  @font-face { font-family: "Inter"; src: url("file:///usr/share/fonts/truetype/macos/Inter-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; }
+  @font-face { font-family: "Noto Serif"; src: url("file:///usr/share/fonts/truetype/noto/NotoSerif-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; }
+  @font-face { font-family: "Noto Serif"; src: url("file:///usr/share/fonts/truetype/noto/NotoSerif-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; }
+  @font-face { font-family: "Noto Serif"; src: url("file:///usr/share/fonts/truetype/noto/NotoSerif-Italic.ttf") format("truetype"); font-weight: 400; font-style: italic; }
+  @font-face { font-family: "JB"; src: url("file:///usr/share/fonts/truetype/jetbrains-mono/JetBrainsMono-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; }
+  @font-face { font-family: "JB"; src: url("file:///usr/share/fonts/truetype/jetbrains-mono/JetBrainsMono-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; }
+
+  :root {
+    --ink: #1B1914;
+    --muted: #5C564C;
+    --line: #D4CBBC;
+    --paper: #F6F3EC;
+    --navy: #1B2836;
+    --navy2: #2A3D50;
+    --brass: #8A6E3C;
+    --signal: #8C2F28;
+    --signalbg: #F4E6E1;
+    --green: #1C4536;
+    --greenbg: #E4EFE8;
+    --allbg: #E7EEF4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Inter", sans-serif;
+    color: var(--ink);
+    font-size: 10pt;
+    line-height: 1.38;
+    background: white;
+  }
+
+  @page {
+    size: A4;
+    margin: 13mm 13mm 14mm 13mm;
+    @top-left {
+      content: "KDLI PANEL  ·  7:00  ·  BITE THE BULLET";
+      font-family: "Inter", sans-serif;
+      font-size: 8pt;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #6B645A;
+    }
+    @top-right {
+      content: "Teach the panel. Do not give them this packet.";
+      font-family: "Inter", sans-serif;
+      font-size: 8pt;
+      color: #6B645A;
+    }
+    @bottom-left {
+      content: "Print single-sided, A4. Color is useful. Black and white still works.";
+      font-family: "Inter", sans-serif;
+      font-size: 8pt;
+      color: #8A8175;
+    }
+    @bottom-right {
+      content: counter(page);
+      font-family: "JB", monospace;
+      font-size: 9pt;
+      color: #1B2836;
+    }
+  }
+  @page:first {
+    margin-top: 12mm;
+    @top-left { content: none; }
+    @top-right { content: none; }
+  }
+
+  h1, h2, h3, p { margin: 0; }
+  .kicker {
+    font-size: 8.5pt;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 4px;
+  }
+  h1 {
+    font-family: "Noto Serif", serif;
+    font-weight: 700;
+    font-size: 32pt;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+  }
+  .deck {
+    margin-top: 6px;
+    font-size: 12pt;
+    line-height: 1.3;
+    color: var(--navy2);
+    max-width: 170mm;
+  }
+  h2 {
+    font-family: "Noto Serif", serif;
+    font-size: 16pt;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 4px;
+  }
+  h3 {
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 4px;
+  }
+
+  .lead {
+    margin-top: 8px;
+    font-size: 10.5pt;
+    line-height: 1.4;
+  }
+
+  .aim {
+    margin-top: 10px;
+    background: var(--navy);
+    color: #F6F3EC;
+    padding: 10px 12px 11px;
+  }
+  .aim h3 { color: #D4B483; margin-bottom: 3px; }
+  .aim p { font-family: "Noto Serif", serif; font-size: 12pt; line-height: 1.32; }
+  .aim .sub {
+    margin-top: 5px;
+    font-family: "Inter", sans-serif;
+    font-size: 9pt;
+    line-height: 1.35;
+    color: #D5D0C6;
+  }
+
+  .rule {
+    margin-top: 8px;
+    border-left: 4px solid var(--signal);
+    background: var(--signalbg);
+    padding: 7px 10px 8px;
+  }
+  .rule strong {
+    font-family: "Noto Serif", serif;
+    font-size: 12.5pt;
+    font-weight: 700;
+    color: var(--signal);
+    display: block;
+    line-height: 1.25;
+  }
+  .rule span { display: block; margin-top: 2px; color: var(--ink); font-size: 9.5pt; }
+
+  .sweeps {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .sweep {
+    flex: 1;
+    background: var(--paper);
+    border-top: 3px solid var(--navy);
+    padding: 6px 7px 7px;
+  }
+  .sweep .when {
+    font-family: "JB", monospace;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--brass);
+  }
+  .sweep .who {
+    margin-top: 2px;
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--signal);
+  }
+  .sweep .what {
+    margin-top: 2px;
+    font-family: "Noto Serif", serif;
+    font-size: 10pt;
+    line-height: 1.25;
+  }
+  .sweep.opt { border-top-color: var(--brass); }
+  .sweep.opt .who { color: var(--brass); }
+
+  .cols { display: flex; gap: 10px; margin-top: 8px; }
+  .col { flex: 1; }
+  .box {
+    background: var(--paper);
+    padding: 7px 9px 8px;
+    height: 100%;
+  }
+  .box ul, .rescue ul { margin: 0; padding-left: 14px; }
+  .box li, .rescue li { margin: 0 0 2px; }
+  .box li:last-child { margin-bottom: 0; }
+
+  .why {
+    margin-top: 8px;
+    border-top: 1px solid var(--line);
+    padding-top: 6px;
+    color: var(--muted);
+    font-size: 9.5pt;
+  }
+  .why strong { color: var(--ink); font-weight: 600; }
+
+  .memo {
+    margin-top: 8px;
+  }
+  .memo ol { margin: 2px 0 0; padding-left: 16px; }
+  .memo li { margin: 0 0 2px; }
+  .memo .line {
+    font-family: "Noto Serif", serif;
+    font-size: 11pt;
+    color: var(--navy);
+  }
+
+  .sheet { break-before: page; }
+  .keep { break-inside: avoid; }
+  .legend {
+    display: flex;
+    gap: 8px;
+    margin: 2px 0 6px;
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .legend i { font-style: normal; padding: 1px 5px; }
+  .lg-do { background: var(--paper); color: var(--muted); }
+  .lg-say { background: #E7EEF4; color: var(--navy); }
+  .lg-pt { background: var(--signalbg); color: var(--signal); }
+  .lg-all { background: var(--allbg); color: var(--navy); }
+  .lg-hear { background: var(--greenbg); color: var(--green); }
+
+  .beat {
+    display: flex;
+    gap: 8px;
+    padding: 3px 0 4px;
+    border-top: 1px solid var(--line);
+    break-inside: avoid;
+  }
+  .clock {
+    width: 34px;
+    flex: 0 0 34px;
+    font-family: "JB", monospace;
+    font-weight: 700;
+    font-size: 8.5pt;
+    color: var(--brass);
+    padding-top: 2px;
+  }
+  .body { flex: 1; }
+  .tag {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-right: 4px;
+    vertical-align: 1px;
+  }
+  .do { color: var(--muted); font-size: 9.5pt; margin-bottom: 2px; }
+  .say {
+    font-family: "Noto Serif", serif;
+    font-size: 11.25pt;
+    line-height: 1.26;
+    color: var(--navy);
+    margin: 1px 0 1px;
+  }
+  .point {
+    background: var(--signalbg);
+    border-left: 3px solid var(--signal);
+    padding: 3px 7px 4px;
+    margin: 3px 0 2px;
+  }
+  .point .say { color: var(--signal); font-size: 11.25pt; }
+  .all {
+    background: var(--allbg);
+    border-left: 3px solid var(--navy);
+    padding: 3px 7px 4px;
+    margin: 3px 0 2px;
+  }
+  .hear {
+    background: var(--greenbg);
+    padding: 2px 7px 3px;
+    margin-top: 2px;
+    color: var(--green);
+    font-size: 9.5pt;
+  }
+  .silence {
+    background: var(--navy);
+    color: #F6F3EC;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 8.5pt;
+    padding: 4px 8px;
+    margin: 2px 0;
+  }
+  .hard {
+    background: #F8F1DE;
+    border-left: 3px solid var(--brass);
+    padding: 3px 7px;
+    margin-top: 3px;
+    font-size: 9.5pt;
+  }
+  .checks { margin: 3px 0 0; padding: 0; list-style: none; }
+  .checks li {
+    display: flex;
+    gap: 6px;
+    align-items: baseline;
+    padding: 1px 0;
+    border-top: 1px solid #E4D5D0;
+    font-family: "Noto Serif", serif;
+    font-size: 11pt;
+    color: var(--navy);
+  }
+  .checks .n {
+    font-family: "JB", monospace;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--signal);
+    width: 12px;
+    flex: 0 0 12px;
+  }
+  .checks .ans {
+    margin-left: auto;
+    font-family: "Inter", sans-serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--green);
+    white-space: nowrap;
+  }
+
+  /* Cue card */
+  .cuehead {
+    background: var(--navy);
+    color: #F6F3EC;
+    padding: 8px 10px 9px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 8px;
+  }
+  .cuehead h2 { color: white; font-size: 18pt; margin: 0; }
+  .cuehead p { color: #D5D0C6; font-size: 8.5pt; text-align: right; line-height: 1.3; }
+  .cuegrid { display: flex; gap: 10px; }
+  .mouth { flex: 1.35; }
+  .ears { flex: 0.78; }
+  .cline {
+    break-inside: avoid;
+    padding: 3px 0 4px;
+    border-top: 1px solid var(--line);
+  }
+  .cline .t {
+    font-family: "JB", monospace;
+    font-size: 8pt;
+    font-weight: 700;
+    color: var(--brass);
+    margin-right: 5px;
+  }
+  .cline .s {
+    font-family: "Noto Serif", serif;
+    font-size: 11pt;
+    line-height: 1.25;
+    color: var(--navy);
+  }
+  .cline.p .s { color: var(--signal); }
+  .earbox {
+    background: var(--paper);
+    padding: 6px 8px 7px;
+    margin-bottom: 6px;
+    break-inside: avoid;
+  }
+  .earbox.alert { background: var(--signalbg); }
+  .earbox.ok { background: var(--greenbg); }
+  .earbox h3 { margin-bottom: 3px; }
+  .earbox p, .earbox li { font-size: 9pt; line-height: 1.3; }
+  .earbox ul { margin: 0; padding-left: 13px; }
+  .earbox li { margin: 0 0 2px; }
+  .keyline {
+    font-family: "Noto Serif", serif;
+    font-size: 10.5pt;
+    color: var(--navy);
+    line-height: 1.25;
+    margin-bottom: 3px;
+  }
+
+  /* Cut pages */
+  .cutnote {
+    font-size: 9.5pt;
+    margin-bottom: 6px;
+  }
+  .props { display: flex; gap: 8px; margin-bottom: 8px; }
+  .prop {
+    flex: 1;
+    border: 1.5px dashed #8A8175;
+    min-height: 74mm;
+    padding: 16px 14px 14px;
+    position: relative;
+    break-inside: avoid;
+  }
+  .cutlab {
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #8A8175;
+  }
+  .prop h2 { font-size: 40pt; margin-top: 6px; line-height: 0.92; }
+  .prop.back h2 { font-size: 28pt; line-height: 1; }
+  .prop .year {
+    font-family: "JB", monospace;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--brass);
+    font-size: 14pt;
+    margin-top: 4px;
+  }
+  .prop .story {
+    margin-top: 8px;
+    font-size: 15pt;
+    line-height: 1.32;
+  }
+  .prop.back { background: var(--paper); }
+  .pattern {
+    font-family: "Noto Serif", serif;
+    font-size: 13pt;
+    color: var(--navy);
+    margin-top: 4px;
+    line-height: 1.3;
+  }
+  .minie { width: 22px; height: 46px; display: block; margin: 2px 0 2px; }
+  .strips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .strip {
+    width: calc(50% - 3px);
+    border: 1px dashed #8A8175;
+    padding: 5px 7px 6px;
+    break-inside: avoid;
+  }
+  .strip .nm {
+    font-family: "Noto Serif", serif;
+    font-weight: 700;
+    font-size: 11pt;
+    color: var(--navy);
+    letter-spacing: 0.02em;
+  }
+  .strip p { font-size: 8pt; line-height: 1.3; }
+
+  .cardgrid { display: flex; flex-wrap: wrap; gap: 6px; }
+  .card {
+    width: calc(50% - 3px);
+    border: 1.5px solid var(--navy);
+    height: 72mm;
+    padding: 8px 10px 16mm;
+    break-inside: avoid;
+    position: relative;
+  }
+  .card .let {
+    font-family: "JB", monospace;
+    font-weight: 700;
+    font-size: 14pt;
+    color: var(--brass);
+  }
+  .card .sit {
+    font-family: "Noto Serif", serif;
+    font-size: 13pt;
+    line-height: 1.3;
+    color: var(--navy);
+    margin-top: 6px;
+  }
+  .card .stem {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 8px;
+    padding-top: 6px;
+    border-top: 1px solid var(--line);
+    font-size: 11pt;
+    font-weight: 600;
+  }
+  .card .stem em { font-family: "Noto Serif", serif; font-style: italic; font-weight: 400; }
+
+  .rescue h2 { margin-bottom: 6px; }
+  .rgrid { display: flex; flex-wrap: wrap; gap: 6px; }
+  .r {
+    width: calc(50% - 3px);
+    background: var(--paper);
+    padding: 6px 8px 7px;
+    break-inside: avoid;
+  }
+  .r.wide { width: 100%; }
+  .r h3 { margin-bottom: 2px; }
+  .r p { font-size: 9.5pt; line-height: 1.32; }
+  .r .ans {
+    font-family: "Noto Serif", serif;
+    font-size: 11pt;
+    color: var(--navy);
+    line-height: 1.28;
+    margin-top: 2px;
+  }
+  .ko { font-family: "WenQuanYi Micro Hei", "Inter", sans-serif; }
+  .small { font-size: 8.5pt; color: var(--muted); margin-top: 6px; }
+  .stops {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+  }
+  .stop {
+    flex: 1;
+    border: 1px solid var(--line);
+    padding: 5px 7px;
+  }
+  .stop b {
+    display: block;
+    font-family: "JB", monospace;
+    color: var(--brass);
+    font-size: 9pt;
+  }
+  .stop span { font-size: 9pt; }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <p class="kicker">Korea Defense Language Institute · panel interview</p>
+  <h1>Bite the bullet.</h1>
+  <p class="deck">A seven-minute idiom lesson. You teach it to the panel. They are the class. Every person speaks.</p>
+
+  <div class="aim">
+    <h3>Aim</h3>
+    <p>By seven minutes, every person has used <em>bite the bullet</em> in two original sentences. One is a military decision. One is their own life.</p>
+    <p class="sub">Class you are teaching: intermediate officers and NCOs. People in the chairs: the panel. Success is their speech, not your explanation. Do not say your name until the last line.</p>
+  </div>
+
+  <div class="rule">
+    <strong>No question goes to the room. Every question goes to a person.</strong>
+    <span>Start on your left. Move one way and do not bounce. The quiet person is usually last. A fixed order still reaches them. If the chair answers for the table, say: “Thank you. The next one is yours.” Then point past the chair.</span>
+  </div>
+
+  <div class="sweeps">
+    <div class="sweep">
+      <div class="when">0:20</div>
+      <div class="who">Sweep 1 · every person</div>
+      <div class="what">One feeling word. Pain, fear, duty.</div>
+    </div>
+    <div class="sweep">
+      <div class="when">1:10</div>
+      <div class="who">Sweep 2 · every person</div>
+      <div class="what">One short check. No, yes, accept, bit.</div>
+    </div>
+    <div class="sweep">
+      <div class="when">2:40</div>
+      <div class="who">Sweep 3 · every person</div>
+      <div class="what">I have to bite the bullet and…</div>
+    </div>
+    <div class="sweep">
+      <div class="when">4:40</div>
+      <div class="who">Sweep 4 · every person</div>
+      <div class="what">I bit the bullet and… a real moment.</div>
+    </div>
+    <div class="sweep opt">
+      <div class="when">6:20</div>
+      <div class="who">Sweep 5 · if time</div>
+      <div class="what">Tomorrow I will bite the bullet and…</div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="col">
+      <div class="box">
+        <h3>Walk in with</h3>
+        <ul>
+          <li>This cue page on top. The script stays in the folder.</li>
+          <li>The prop card, face up, in your hand.</li>
+          <li>Cards A to F, face down, A on top.</li>
+          <li>The six strips, hidden until the thank-you.</li>
+          <li>A timer set to 7:00, face up. Start it on the word “Please.”</li>
+          <li>Your name written on the last line of the cue page.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <div class="box">
+        <h3>Do not bring</h3>
+        <ul>
+          <li>A round, a blank, a toy weapon, or a picture of a modern cartridge. You are on a Ministry of National Defense site. The prop is a printed card.</li>
+          <li>A slideshow. The card is the picture. Eye contact is the point.</li>
+          <li>A joke about rank, generals, or war.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <p class="why"><strong>Why this idiom.</strong> American officers say it. The old story is a field hospital, so the first twenty seconds belong to you. The pattern demands a verb, so a person who already knows the meaning still has to speak. A rarer idiom would spend the seven minutes on a definition. This one spends them on sentences. If they know it already, the lesson does not collapse. Say: “Yes. Hold it. I still want one word for the feeling.”</p>
+
+  <div class="memo">
+    <h3>Learn these, then glance</h3>
+    <ol>
+      <li><span class="line">Please be my class for seven minutes. I will point. You speak.</span></li>
+      <li><span class="line">1864. A field hospital. No anesthetic. A lead bullet between his teeth.</span></li>
+      <li><span class="line">One word from each of you. Why does he bite it?</span></li>
+      <li><span class="line">You can stop at bullet. Today, don’t. Add the action.</span></li>
+      <li><span class="line">Save the story. One sentence.</span></li>
+    </ol>
+  </div>
+
+  <div class="stops">
+    <div class="stop"><b>If they say 3 min</b><span>Hook, one word each, the meaning, the checks as one chorus, then only the real-life sentence.</span></div>
+    <div class="stop"><b>If they say 5 min</b><span>Skip “tomorrow.” Keep the card and the real-life sentence.</span></div>
+    <div class="stop"><b>If they give you 10</b><span>After the close, each person says the same decision in one formal line, idiom removed.</span></div>
+    <div class="stop"><b>Hard stops</b><span>At 4:30, drop leftover cards and start real life. At 6:20, skip tomorrow. Protect sweep 4.</span></div>
+  </div>
+</section>
+
+<section class="sheet">
+  <p class="kicker">The lesson, said aloud</p>
+  <h2>From silence to the first sentence.</h2>
+  <p class="lead" style="margin-bottom:6px;">Lines in serif are what you say. Everything else is for you. Look at the person when you point, not at this page.</p>
+  <div class="legend">
+    <i class="lg-do">Do</i>
+    <i class="lg-say">Say</i>
+    <i class="lg-pt">Point · one person, then the next</i>
+    <i class="lg-all">All · together</i>
+    <i class="lg-hear">Hear</i>
+  </div>
+
+  <article class="beat">
+    <div class="clock">0:00</div>
+    <div class="body">
+      <p class="do"><span class="tag">Do</span>Stand if the room allows. Start the timer on the first word. Do not introduce yourself. Do not say the idiom yet.</p>
+      <p class="say">“Please be my class for seven minutes. Intermediate officers and NCOs. I will point. You speak.”</p>
+    </div>
+  </article>
+
+  <article class="beat">
+    <div class="clock">0:08</div>
+    <div class="body">
+      <p class="do"><span class="tag">Do</span>Raise the prop card. Hold it still, high enough for the far seat.</p>
+      <div class="silence">Silence · two seconds · card up · say nothing</div>
+      <p class="say">“1864. A field hospital. There is no anesthetic. The surgeon puts a lead bullet between the soldier’s teeth.”</p>
+      <p class="do"><span class="tag">Do</span>Tap the card once.</p>
+      <div class="point">
+        <p class="say"><span class="tag">Sweep 1</span>“One word from each of you. Why does he bite it? Start on my left.”</p>
+      </div>
+      <p class="hear"><span class="tag">Hear</span>Pain, fear, courage, duty. Any real word is right. If they name the idiom: “Yes. Hold it. One word for the feeling.” If they freeze: “Any word. Pain, fear, duty.” Then move.</p>
+    </div>
+  </article>
+
+  <article class="beat">
+    <div class="clock">0:45</div>
+    <div class="body">
+      <p class="do"><span class="tag">Do</span>Lower the card. Use two of their words, the ones you actually heard.</p>
+      <p class="say">“Pain. Duty. He accepts the pain, and he does the hard thing anyway.”</p>
+      <p class="say">“English has an idiom for that. Bite the bullet.”</p>
+      <p class="do"><span class="tag">Do</span>Write only those three words, large, or flip the card to the back. Speak while you write. Do not turn your back for a paragraph.</p>
+      <p class="say">“That was 1864. American officers still say it.”</p>
+      <p class="say">“A thing is unpleasant. You accept it. You do it.”</p>
+      <div class="point">
+        <p class="say"><span class="tag">Sweep 2</span>One check each. Point, don’t ask the air. Three concept checks, then one form check. Do not say “CCQ.”</p>
+        <ul class="checks">
+          <li><span class="n">1</span><span>Does he enjoy it?</span><span class="ans">No</span></li>
+          <li><span class="n">2</span><span>Does he do it anyway?</span><span class="ans">Yes</span></li>
+          <li><span class="n">3</span><span>Try your best, or accept something hard?</span><span class="ans">Accept it</span></li>
+          <li><span class="n">4</span><span>Past tense. Bite, or bit?</span><span class="ans">Bit</span></li>
+        </ul>
+      </div>
+      <p class="do"><span class="tag">Do</span>Five people: the fifth answers “Can I write this in an OPORD?” Hear no, then say the line below. Three people: person 1 also takes question 4. Six people: these four checks become one chorus. Sweeps 1, 3, and 4 stay individual.</p>
+      <p class="say">“Speaking, yes. A written order, no.”</p>
+      <div class="all">
+        <p class="say"><span class="tag">All</span>“Say it with me. Bite the bullet.”</p>
+        <p class="say">“Again. Bite the BULL-it. Bull rhymes with pull.”</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="beat">
+    <div class="clock">1:50</div>
+    <div class="body">
+      <p class="do"><span class="tag">Do</span>Write the two patterns, nothing else. <em>have to bite the bullet and + verb</em> &nbsp;/&nbsp; <em>I bit the bullet and + verb</em></p>
+      <p class="say">“You can stop at the word bullet. Today, don’t. Add the action.”</p>
+      <p class="say">“Have to bite the bullet and, plus a verb.”</p>
+      <p class="say">“Listen to mine. The joint brief is too long. We have to bite the bullet and cut three slides.”</p>
+      <div class="all">
+        <p class="say"><span class="tag">All</span>“Say my sentence.”</p>
+      </div>
+      <p class="hear"><span class="tag">Hear</span>The whole sentence, once. If the stress slips, you already fixed it. Do not drill again.</p>
+    </div>
+  </article>
+</section>
+
+<section>
+  <div class="keep">
+  <p class="kicker" style="margin-top:8px;">The lesson, said aloud</p>
+  <h2>Two sentences from every person.</h2>
+  <p class="lead" style="margin-bottom:6px;">Any real action is a right answer. You are listening for the idiom and a verb, not for one correct decision. Repeat their verb, then move. That is the praise.</p>
+  </div>
+
+  <article class="beat">
+    <div class="clock">2:20</div>
+    <div class="body">
+      <p class="do"><span class="tag">Do</span>Deal one card face down to each person, left to right. A goes to the person on your left, because they speak first and A is the clearest. Extra cards stay in your hand.</p>
+      <p class="say">“Face down. Don’t look.”</p>
+      <p class="do"><span class="tag">Do</span>Finish the deal, then:</p>
+      <p class="say">“Turn it over. Read. Don’t speak yet.”</p>
+      <p class="do"><span class="tag">Do</span>Count ten seconds in your head. Watch their eyes, not the page.</p>
+      <div class="point">
+        <p class="say"><span class="tag">Sweep 3</span>“One sentence. Start with: I have to bite the bullet and… You, on my left.”</p>
+      </div>
+      <p class="hear"><span class="tag">Hear</span>A cancel the leave. &nbsp;B correct the slide, or tell the aide. &nbsp;C translate the bad news plainly. &nbsp;D retake the test at 0600. &nbsp;E take him off the list. &nbsp;F give the order. Accept a better action than these.</p>
+      <p class="do"><span class="tag">Do</span>After a good sentence, repeat only the verb: “Cancel the leave. Yes.” Point to the next person. No new instructions. No story from you.</p>
+      <div class="hard"><strong>If the sentence is thin.</strong> No verb: “Add the action. I have to bite the bullet and…” &nbsp; They retell the card: “The sentence. I have to bite the bullet and…” &nbsp; They argue the order: “The decision stands. I need the sentence.” &nbsp; One repair each, then move. Do not debate rank, fairness, or the convoy.</div>
+    </div>
+  </article>
+
+  <article class="beat">
+    <div class="clock">4:30</div>
+    <div class="body">
+      <div class="hard"><strong>Hard stop.</strong> If cards are still unfinished at 4:30, stop dealing turns. This round replaces what is left.</div>
+      <p class="say">“Past tense now. A real moment. Work, school, the military, this morning. Small is fine.”</p>
+      <p class="say">“Mine is short. I bit the bullet and walked in here to teach you.”</p>
+      <div class="point">
+        <p class="say"><span class="tag">Sweep 4</span>“One sentence. I bit the bullet and… Start on my left.”</p>
+      </div>
+      <p class="do"><span class="tag">Do</span>Use a name if it is printed in front of you. Do not invent a rank. Do not ask anyone to introduce themselves.</p>
+      <div class="point">
+        <p class="say"><span class="tag">If a story starts</span>“Save the story. One sentence. I bit the bullet and…”</p>
+      </div>
+      <div class="point">
+        <p class="say"><span class="tag">If there is silence</span>Wait three seconds. “I’ll give you the start. I bit the bullet and…”</p>
+      </div>
+      <p class="hear"><span class="tag">Hear</span>Past tense plus a verb. If you hear “I bite the bullet yesterday,” recast once: “Bit. I bit the bullet and owned the mistake. Your turn, with bit.” Then let them say it.</p>
+    </div>
+  </article>
+
+  <article class="beat">
+    <div class="clock">6:15</div>
+    <div class="body">
+      <p class="do"><span class="tag">Do</span>Look at the timer. If you are already at 6:20, skip this sweep and close.</p>
+      <div class="point">
+        <p class="say"><span class="tag">Sweep 5</span>“Last pass. Fast. No story. Tomorrow I will bite the bullet and…”</p>
+      </div>
+      <p class="do"><span class="tag">Do</span>Around the table once. Do not recast this round unless the idiom itself breaks. The tense work already happened.</p>
+    </div>
+  </article>
+
+  <article class="beat">
+    <div class="clock">6:45</div>
+    <div class="body">
+      <div class="all">
+        <p class="say"><span class="tag">All</span>“Together. Bite the bullet.”</p>
+      </div>
+      <p class="say">“Accept it. Then do it.”</p>
+      <p class="say">“You used it for a mission. You used it for your own life. That was the lesson.”</p>
+      <p class="do"><span class="tag">Do</span>Set the strips on the table in one move. Do not hand them out one by one. Do not explain them. They are a record for the score sheet, not a worksheet.</p>
+      <p class="say">“I’m [your name]. Thank you.”</p>
+      <p class="do"><span class="tag">Do</span>Stop. Close the folder. Sit if they ask. Do not add a moral, a biography, or a second idiom.</p>
+    </div>
+  </article>
+
+</section>
+
+<section class="sheet">
+  <div class="cuehead">
+    <h2>Hold this page.</h2>
+    <p>Glance. Don’t read.<br>Left column is your mouth.<br>Right column is when it bends.<br>Name: ____________________</p>
+  </div>
+  <div class="cuegrid">
+    <div class="mouth">
+      <div class="cline"><span class="t">0:00</span><span class="s">Please be my class for seven minutes. Intermediate officers and NCOs. I will point. You speak.</span></div>
+      <div class="cline"><span class="t">0:08</span><span class="s">Card up. Two seconds of silence.</span></div>
+      <div class="cline"><span class="t"></span><span class="s">1864. A field hospital. There is no anesthetic. The surgeon puts a lead bullet between the soldier’s teeth.</span></div>
+      <div class="cline p"><span class="t">S1</span><span class="s">One word from each of you. Why does he bite it? Start on my left.</span></div>
+      <div class="cline"><span class="t">0:45</span><span class="s">Pain. Duty. He accepts the pain, and he does the hard thing anyway. Bite the bullet. That was 1864. American officers still say it. A thing is unpleasant. You accept it. You do it.</span></div>
+      <div class="cline p"><span class="t">S2</span><span class="s">1 Does he enjoy it?<br>2 Does he do it anyway?<br>3 Try your best, or accept something hard?<br>4 Bite, or bit?</span></div>
+      <div class="cline"><span class="t">All</span><span class="s">Bite the bullet. Again. Bite the BULL-it. Bull rhymes with pull.</span></div>
+      <div class="cline"><span class="t">1:50</span><span class="s">You can stop at bullet. Today, don’t. Add the action. The joint brief is too long. We have to bite the bullet and cut three slides. Say my sentence.</span></div>
+      <div class="cline p"><span class="t">2:20</span><span class="s">Face down. Don’t look. … Turn it over. Read. Don’t speak yet.</span></div>
+      <div class="cline p"><span class="t">S3</span><span class="s">One sentence. I have to bite the bullet and… You, on my left.</span></div>
+      <div class="cline"><span class="t">4:30</span><span class="s">Past tense. A real moment. Small is fine. I bit the bullet and walked in here to teach you.</span></div>
+      <div class="cline p"><span class="t">S4</span><span class="s">One sentence. I bit the bullet and… Start on my left.</span></div>
+      <div class="cline p"><span class="t">6:20</span><span class="s">Only if early. Tomorrow I will bite the bullet and…</span></div>
+      <div class="cline"><span class="t">6:45</span><span class="s">Together. Bite the bullet. Accept it. Then do it. You used it for a mission. You used it for your own life. That was the lesson. I’m ________. Thank you.</span></div>
+    </div>
+    <div class="ears">
+      <div class="earbox ok">
+        <h3>Hear on the checks</h3>
+        <p>No. &nbsp; Yes. &nbsp; Accept something hard. &nbsp; Bit.</p>
+        <p style="margin-top:3px;">Fifth person only: “In an OPORD?” No. Then: “Speaking, yes. A written order, no.”</p>
+      </div>
+      <div class="earbox ok">
+        <h3>Card targets</h3>
+        <p>Any real action counts. These are likely.</p>
+        <p style="margin-top:3px;"><strong>A</strong> cancel the leave<br><strong>B</strong> correct the slide<br><strong>C</strong> translate it plainly<br><strong>D</strong> retake it at 0600<br><strong>E</strong> take him off the list<br><strong>F</strong> give the order</p>
+      </div>
+      <div class="earbox alert">
+        <h3>Lines that save the clock</h3>
+        <p class="keyline">Save the story. One sentence.</p>
+        <p class="keyline">Add the action.</p>
+        <p class="keyline">The decision stands. I need the sentence.</p>
+        <p class="keyline">Bit. One more time.</p>
+        <p class="keyline">Thank you. The next one is yours.</p>
+        <p class="keyline">Yes. Hold it. One word for the feeling.</p>
+      </div>
+      <div class="earbox">
+        <h3>Six people</h3>
+        <p>Sweep 2 becomes one chorus. Sweeps 1, 3, and 4 stay individual, so everyone still speaks three times.</p>
+      </div>
+      <div class="earbox">
+        <h3>Hard stops</h3>
+        <p><strong>4:30</strong> start real life, even if cards remain.<br><strong>6:20</strong> skip tomorrow.<br>Protect sweep 4. That is the round they remember.</p>
+        <p style="margin-top:3px;">If they give you longer: “Same decision. One formal line. No idiom. Mine: Three slides will be cut before the brief.”</p>
+      </div>
+      <div class="earbox">
+        <h3>Sound</h3>
+        <p>/baɪt ðə ˈbʊl.ɪt/<br>BULL-it. First syllable. Short vowel, like <em>pull</em>. Always <em>the</em>, never <em>a</em>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sheet">
+  <p class="kicker">Cut this page</p>
+  <h2>The thing you hold up, and the strips you leave behind.</h2>
+  <p class="cutnote">Cut on the dashed lines. Hold up the front and say nothing for two seconds. No drawing of a round: the words are the picture, and you are not carrying ammunition. The back is your board if the room has none. Strips stay in the folder until thank you, then go down in one stack.</p>
+
+  <div class="props">
+    <div class="prop">
+      <span class="cutlab">FRONT</span>
+      <p class="year">1864</p>
+      <h2>Bite this.</h2>
+      <p class="story">A field hospital.<br>No anesthetic.<br>A lead bullet between the teeth.</p>
+    </div>
+    <div class="prop back">
+      <span class="cutlab">BACK</span>
+      <p class="year">THE PATTERN</p>
+      <h2>Bite the bullet.</h2>
+      <p class="pattern">Accept a hard thing.<br>Then do it.</p>
+      <p class="pattern">have to bite the bullet and + verb<br>I bit the bullet and + verb</p>
+      <p class="story" style="margin-top:8px;">Say it to a colleague.<br>Do not write it in the order.</p>
+      <p class="small">Stress: bite the BULL-it.</p>
+    </div>
+  </div>
+
+  <h3>Leave-behinds · six copies · one stack, face up</h3>
+  <div class="strips">
+    <div class="strip"><p class="nm">Bite the bullet.</p><p>Accept a hard thing. Then do it.<br>…bite the bullet and ______.<br>Spoken. Not a written order.</p></div>
+    <div class="strip"><p class="nm">Bite the bullet.</p><p>Accept a hard thing. Then do it.<br>…bite the bullet and ______.<br>Spoken. Not a written order.</p></div>
+    <div class="strip"><p class="nm">Bite the bullet.</p><p>Accept a hard thing. Then do it.<br>…bite the bullet and ______.<br>Spoken. Not a written order.</p></div>
+    <div class="strip"><p class="nm">Bite the bullet.</p><p>Accept a hard thing. Then do it.<br>…bite the bullet and ______.<br>Spoken. Not a written order.</p></div>
+    <div class="strip"><p class="nm">Bite the bullet.</p><p>Accept a hard thing. Then do it.<br>…bite the bullet and ______.<br>Spoken. Not a written order.</p></div>
+    <div class="strip"><p class="nm">Bite the bullet.</p><p>Accept a hard thing. Then do it.<br>…bite the bullet and ______.<br>Spoken. Not a written order.</p></div>
+  </div>
+  <div class="box" style="margin-top:6px;">
+    <h3>The night before</h3>
+    <p>Write your name on the cue page. Stack the cards face down, A on top. Put the prop in front of that stack, and the strips behind the cue page. Phone on silent. Timer at 7:00. Say the five lines on page 1 out loud once, then teach the cue page to four empty chairs. If you go past seven minutes, it will be because a story ran. The line you need is “Save the story. One sentence.”</p>
+  </div>
+</section>
+
+<section class="sheet">
+  <p class="kicker">Cut this page · deal face down · A on top</p>
+  <h2>One card each. Left to right.</h2>
+  <p class="cutnote">Deal A to the person on your left. They speak first, and canceling leave is the easiest sentence to build. Do not read the card aloud for them. The stem at the bottom is the help.</p>
+  <div class="cardgrid">
+    <div class="card">
+      <div class="let">A</div>
+      <p class="sit">A combined exercise starts Monday. Your soldiers expect Chuseok leave. You must cancel it.</p>
+      <p class="stem">I have to bite the bullet and <em>______.</em></p>
+    </div>
+    <div class="card">
+      <div class="let">B</div>
+      <p class="sit">Ten minutes before a ROK–US brief, you see a wrong number on a senior officer’s slide. The brief has not started.</p>
+      <p class="stem">I have to bite the bullet and <em>______.</em></p>
+    </div>
+    <div class="card">
+      <div class="let">C</div>
+      <p class="sit">You are the interpreter. The U.S. side will miss the deadline. The news is bad. Your job is to say it plainly.</p>
+      <p class="stem">I have to bite the bullet and <em>______.</em></p>
+    </div>
+    <div class="card">
+      <div class="let">D</div>
+      <p class="sit">You are on the KDLI course. You failed the briefing test. The retake is tomorrow at 0600, before PT.</p>
+      <p class="stem">I have to bite the bullet and <em>______.</em></p>
+    </div>
+    <div class="card">
+      <div class="let">E</div>
+      <p class="sit">A good soldier failed the English screening. He cannot deploy. You have to tell him, and take him off the list.</p>
+      <p class="stem">I have to bite the bullet and <em>______.</em></p>
+    </div>
+    <div class="card">
+      <div class="let">F</div>
+      <p class="sit">The night convoy is risky. The order stands. Your squad is waiting for you to speak.</p>
+      <p class="stem">I have to bite the bullet and <em>______.</em></p>
+    </div>
+  </div>
+</section>
+
+<section class="sheet">
+  <p class="kicker">Only if the lesson bends, or they ask</p>
+  <h2>Rescue lines, and the four answers.</h2>
+  <p class="lead" style="margin-bottom:6px;">Say the rescue line, then return to their sentence. Do not open a seminar. The current hiring notice has a separate 50-minute intermediate demo later. This packet is the short panel lesson. Use the last box only if they ask how the hour would go.</p>
+
+  <div class="rgrid">
+    <div class="r">
+      <h3>They already know it</h3>
+      <p class="ans">“Good. Then use it. I have to bite the bullet and…”</p>
+      <p>Knowing the phrase and saying it about a real decision are different skills. Skip the definition. Keep the sweeps.</p>
+    </div>
+    <div class="r">
+      <h3>They define it as “try hard”</h3>
+      <p class="ans">“This one is not effort. It is a hard thing you would rather avoid. Does he enjoy it?”</p>
+      <p>Wait for no. Then: “You accept it, and you do it.”</p>
+    </div>
+    <div class="r">
+      <h3>They won’t speak</h3>
+      <p class="ans">“I’ll give you the start. I bit the bullet and…”</p>
+      <p>Wait the three seconds first. Do not fill the silence with your own second story. Do not skip them and call it kindness.</p>
+    </div>
+    <div class="r">
+      <h3>The chair takes every turn</h3>
+      <p class="ans">“Thank you. The next one is yours.”</p>
+      <p>Point to the quiet person. Smile. Do not apologize for running your own lesson.</p>
+    </div>
+    <div class="r">
+      <h3>They challenge the history</h3>
+      <p class="ans">“That’s the traditional story. The meaning we are learning doesn’t depend on it.”</p>
+      <p>Patients biting a bullet in surgery is the traditional account, and it is disputed. Biting open a paper cartridge is a related military image. Do not debate it. Do not quote Kipling unless the book is in your hand.</p>
+    </div>
+    <div class="r">
+      <h3>They offer Korean</h3>
+      <p>Do not start this. If they do:</p>
+      <p class="ans"><span class="ko">이를 악물다</span> — “That is the feeling. Clenched teeth. Bite the bullet is the feeling plus the action. Add a verb.”</p>
+      <p class="ans" style="margin-top:3px;"><span class="ko">울며 겨자 먹기</span> — “Closer. An unpleasant thing you do because you must. Keep the English: bite the bullet and…”</p>
+    </div>
+    <div class="r">
+      <h3>They confuse a neighbor</h3>
+      <p><em>Face the music</em> is the consequences, often the punishment. <em>Bite the bullet</em> is the hard action itself. <em>Bite off more than you can chew</em> means you took on too much.</p>
+      <p class="ans">“Different idiom. Give me bite the bullet again, plus the action.”</p>
+    </div>
+    <div class="r">
+      <h3>Likely slips</h3>
+      <p>I bite the bullet yesterday → <strong>bit</strong>.<br>I bit the bullet → add <strong>and + verb</strong>.<br>Bite a bullet / bite bullet → <strong>the</strong>.<br>I have to bite the bullet to cancel → accept it, offer <strong>and cancel</strong>.</p>
+    </div>
+
+    <div class="r wide">
+      <h3>If they ask why this idiom</h3>
+      <p class="ans">“Officers already meet it with American counterparts. The hospital story gets the room quiet without a gadget. And the pattern forces a verb, so today proved use, not a definition. Every person here could finish the sentence from their own work.”</p>
+    </div>
+    <div class="r wide">
+      <h3>If they ask how the 50-minute class would go</h3>
+      <p>Same aim, plus register. Intermediate officers and NCOs.</p>
+      <p style="margin-top:3px;"><strong>0–8</strong> Pairs: a hard decision they have postponed. You harvest three. &nbsp;<strong>8–16</strong> Story, meaning, the same checks, board. &nbsp;<strong>16–24</strong> Sort nine situations into <em>bite the bullet</em>, <em>face the music</em>, and <em>grit your teeth</em>. &nbsp;<strong>24–34</strong> Cards. Pairs say the sentence, then one pair says it to the room. &nbsp;<strong>34–45</strong> Role-play: deliver the bad news to a U.S. counterpart, idiom allowed. Then rewrite one line for a written report, idiom removed. &nbsp;<strong>45–50</strong> Six sentences on the board. Upgrade two. Exit: “Tomorrow I will bite the bullet and…” on paper.</p>
+      <p class="ans" style="margin-top:3px;">“In the hour they also learn where not to say it. In the seven minutes, I would rather hear every voice.”</p>
+    </div>
+  </div>
+  <p class="small">Rehearse once with four chairs and a timer. Point at the chairs. If you pass 7:00, the stories ran. Practice “Save the story. One sentence.” In the room, the cue page stays in your hand and your eyes stay on them.</p>
+</section>
+
+</body>
+</html>
